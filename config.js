@@ -4,7 +4,7 @@ module.exports = {
   TOKEN: "",
   language: "en",
   ownerID: ["1004206704994566164", ""], 
-  mongodbUri : "",
+  mongodbUri : "mongodb+srv://b0ss:MgfaYXNCOzl9p1WV@b0ss-music-v2.gll1e.mongodb.net/?retryWrites=true&w=majority&appName=B0ss-Music-v2",
   setupFilePath: './commands/setup.json',
   commandsDir: './commands',  
   embedColor: "#1db954",
