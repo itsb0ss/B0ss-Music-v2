@@ -14,13 +14,6 @@ module.exports = {
   embedTimeout: 5, 
   errorLog: "", 
   nodes: [
-  {
-      name: "ChalresNaig Node",
-      password: "NAIGLAVA-dash.techbyte.host",
-      host: "lavahatry4.techbyte.host",
-      port: 3000,
-      secure: false
-    },
     { 
       name: "Public Lavalink v4 NonSSL",
       password: "https://dsc.gg/ajidevserver",
