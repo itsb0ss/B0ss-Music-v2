@@ -44,7 +44,7 @@ module.exports = async (client) => {
         console.log(`🎵 Now Playing: ${trackArtist} - ${trackName}`);
 
         client.user.setActivity({
-            name: `${trackArtist}`,
+            name: `${track.info.author || 'Unknown Artist'} - ${trackName}`,
             type: ActivityType.Playing
         });
     }
