@@ -1,3 +1,5 @@
+const mongodbUri = process.env.MONGO;
+console.log(`MONGO Key: ${mongodbUri}`);
 const { Client, GatewayIntentBits } = require("discord.js");
 const config = require("./config.js");
 const fs = require("fs");
