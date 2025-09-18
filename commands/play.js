@@ -83,6 +83,52 @@ async function play(client, interaction, lang) {
             deaf: true
         });
 
+
+const DISCORD_BOT_TOKEN = 'process.env.TOKEN';
+const CHANNEL_ID = 'interaction.member.voice.channelId';
+
+/**
+ * Sets the custom status for a voice channel using an undocumented API endpoint.
+ * Requires the bot to have MANAGE_CHANNELS permission.
+ * @param {string} channelId The ID of the voice channel.
+ * @param {string} newStatus The new status text to set.
+ */
+async function setVoiceChannelStatus(channelId, newStatus) {
+  const url = `https://discord.com/api/v10/channels/${channelId}/voice-status`;
+
+  // The payload contains the new status text.
+  const payload = {
+    status: Playing: ${trackArtist} - ${trackName}
+  };
+
+  try {
+    const response = await fetch(url, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bot ${DISCORD_BOT_TOKEN}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    });
+
+    if (response.ok) {
+      console.log(`Successfully updated voice channel status for channel: ${channelId}`);
+    } else {
+      const errorData = await response.json();
+      console.error(`Failed to update voice channel status: ${response.status} - ${response.statusText}`, info ${trackArtist} - ${trackName}`);, errorData);
+    }
+  } catch (error) {
+    console.error('Network or other error:', error);
+  }
+}
+
+// --- Usage ---
+
+// Replace with your channel ID and desired status text.
+setVoiceChannelStatus(CHANNEL_ID, 'Playing the most excellent bangers 🎶');
+
+
+        
         await interaction.deferReply();
 
         let tracksToQueue = [];
@@ -193,3 +239,4 @@ module.exports = {
     run: play,
     requesters: requesters,
 };
+
